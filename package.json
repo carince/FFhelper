@@ -1,0 +1,24 @@
+{
+  "name": "ffhelper",
+  "version": "1.0.0",
+  "description": "A FFmpeg CLI tool to make trimming, compressing, and audio management easier.",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "bundle": "pkg package.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "pkg": "^5.8.0"
+  },
+  "pkg": {
+    "scripts": "src/*.js",
+    "targets": [
+      "latest-win-x64"
+    ],
+    "outputPath": "dist"
+  }
+}
