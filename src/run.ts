@@ -11,7 +11,7 @@ interface argsInt {
 }
 
 export default async function ffmpegProcessing() {
-    let ffmpegArgs: argsInt = {
+    const ffmpegArgs: argsInt = {
         input: "",
         trim: "",
         audio: "",

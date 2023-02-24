@@ -14,7 +14,7 @@ interface settingsInt {
     output: string;
 }
 
-let settings: settingsInt = {
+const settings: settingsInt = {
     directory: "",
     trimConfirm: false,
     trimStart: "",
