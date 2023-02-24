@@ -2,24 +2,35 @@
   "name": "ffhelper",
   "version": "0.0.1",
   "description": "A FFmpeg CLI tool to make trimming, compressing, and audio management easier.",
-  "main": "src/index.js",
-  "bin": "src/index.js",
+  "main": "src/index.ts",
+  "bin": "src/index.ts",
   "scripts": {
-    "bundle": "pkg package.json"
+    "bundle": "pkg package.json",
+    "start": "ts-node src/index.ts",
+    "lint": "eslint src --fix",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Norikiru",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^8.0.0",
-    "pkg": "^5.8.0"
+    "@swc/core": "^1.3.34",
+    "eslint": "^8.33.0",
+    "inquirer": "^9.1.4",
+    "pkg": "^5.8.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   },
   "pkg": {
-    "scripts": "src/*.js",
+    "scripts": "src/*.ts",
     "targets": [
       "latest-win-x64"
     ],
     "outputPath": "dist"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.53.0"
+  }
 }
