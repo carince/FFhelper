@@ -1,6 +1,6 @@
 {
   "name": "ffhelper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A FFmpeg CLI tool to make trimming, compressing, and audio management easier.",
   "main": "src/index.ts",
   "bin": "dist/index.js",
