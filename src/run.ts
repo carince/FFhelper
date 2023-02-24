@@ -47,8 +47,8 @@ export default async function ffmpegProcessing() {
         ffmpegArgs.compression = "-c:v copy";
     }
 
-    ffmpegArgs.output = `"${os.homedir}/Videos/ffhelper/${settings.output}.mp4"`;
+    ffmpegArgs.output = `"${os.homedir}/Videos/FFhelper/${settings.output}.mp4"`;
 
-    console.log(`FFmpeg Command: ffmpeg -v quiet -stats ${ffmpegArgs.input} ${ffmpegArgs.trim} ${ffmpegArgs.audio} ${ffmpegArgs.compression} ${ffmpegArgs.output}`);
-    process.execSync(`ffmpeg -v quiet -stats ${ffmpegArgs.input} ${ffmpegArgs.trim} ${ffmpegArgs.audio} ${ffmpegArgs.compression} ${ffmpegArgs.output}`, { stdio: "inherit" });
+    console.log(`FFmpeg Command: ffmpeg  -y -v quiet -stats ${ffmpegArgs.input} ${ffmpegArgs.trim} ${ffmpegArgs.audio} ${ffmpegArgs.compression} ${ffmpegArgs.output}`);
+    process.execSync(`ffmpeg  -y -v quiet -stats ${ffmpegArgs.input} ${ffmpegArgs.trim} ${ffmpegArgs.audio} ${ffmpegArgs.compression} ${ffmpegArgs.output}`, { stdio: "inherit" });
 } 

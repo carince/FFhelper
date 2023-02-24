@@ -1,11 +1,7 @@
 {
-    "ts-node": {
-        "swc": true,
-        "esm": true
-    },
     "compilerOptions": {
         "strict": true,
-        "outDir": "./dist",
+        "outDir": "./dist/js",
         "rootDir": "./src",
         "baseUrl": "./src",
         "module": "ESNext",
@@ -25,7 +21,7 @@
         "isolatedModules": true
     },
     "include": [
-        "**/**/*"
+        "./src"
     ],
     "exclude": [
         "/.github",
