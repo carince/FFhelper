@@ -9,7 +9,7 @@ export default async function check() {
         }
     });
 
-    if (!fs.existsSync(`${os.homedir}/Videos/ffhelper`)){
-        fs.mkdirSync(`${os.homedir}/Videos/ffhelper`, { recursive: true });
+    if (!fs.existsSync(`${os.homedir}/Videos/FFhelper`)){
+        fs.mkdirSync(`${os.homedir}/Videos/FFhelper`, { recursive: true });
     }
 }

@@ -14,7 +14,7 @@ interface settingsInt {
     output: string;
 }
 
-const settings: settingsInt = {
+let settings: settingsInt = {
     directory: "",
     trimConfirm: false,
     trimStart: "",
@@ -23,7 +23,7 @@ const settings: settingsInt = {
     mergeAudio: false,
     compressConfirm: false,
     compressCRF: "",
-    output: "output"
+    output: ""
 };
 
 async function askSettings(): Promise<void> {
