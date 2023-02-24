@@ -16,11 +16,11 @@
 - [NodeJS](https://nodejs.org/en/download/ "NodeJS v16.17.0^")
 - [git](https://git-scm.com/downloads "git")
 
-### Download
+### ⬇️ Download
 You can get the executable from the [release](https://github.com/Norikiru/FFhelper/releases "Releases Page") page.
 If you want to try new features before they get pushed to the main branch, follow the [Building](https://github.com/Norikiru/FFhelper#Building "Building Guide") guide below.
 
-### Building
+### 🛠️ Building
 - Open your terminal and clone the repository:
 ```bash
 git clone https://github.com/Norikiru/FFhelper.git
