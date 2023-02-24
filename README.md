@@ -6,7 +6,7 @@
 
 ## 💥 Features 
 - Video Trimming
-- Audio Management (Select audio channels, merge, and volume)
+- Audio Management (Select and merge audio channels!)
 - Video Compression
 - *And more to be added!*
 
@@ -16,10 +16,19 @@
 - [NodeJS](https://nodejs.org/en/download/ "NodeJS v16.17.0^")
 - [git](https://git-scm.com/downloads "git")
 
-### Installation
+### Download
+You can get the executable from the [release](https://github.com/Norikiru/FFhelper/releases "Releases Page") page.
+If you want to try new features before they get pushed to the main branch, follow the [Building](https://github.com/Norikiru/FFhelper#Building "Building Guide") guide below.
+
+### Building
 - Open your terminal and clone the repository:
 ```bash
 git clone https://github.com/Norikiru/FFhelper.git
+```
+
+- Go into the ffhelper directory:
+```bash
+cd ./ffhelper
 ```
 
 - Install required dependencies:
@@ -27,9 +36,20 @@ git clone https://github.com/Norikiru/FFhelper.git
 npm i
 ```
 
-- Run FFhelper! 🚀
+- Build with Rollup:
 ```bash
-node .
+npm run build
+```
+
+- Bundle into a executable: 
+```bash
+npm run bundle
+```
+
+- You should be able to see your executable in the `dist` folder
+```bash
+cd ./dist
+./ffhelper.exe
 ```
 
 ### 🆕 Updating

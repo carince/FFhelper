@@ -1,8 +1,4 @@
 {
-    "ts-node": {
-        "swc": true,
-        "esm": true
-    },
     "compilerOptions": {
         "strict": true,
         "outDir": "./dist/js",
