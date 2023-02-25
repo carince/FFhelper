@@ -68,8 +68,7 @@ async function askSettings(): Promise<void> {
         settings.trimStop = prompt.stop.toString();
     }
 
-    const probeOutput: Buffer = process.execSync(`ffprobe -show_entries stream=channels -select_streams a:0 -of compact=p=0:nk=1 -v 0 "${settings.directory}"`);
-
+    const probeOutput: Buffer = process.execSync(`ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "${settings.directory}"`);
     if (parseFloat(probeOutput.toString()) > 1) {
         const audioArr: any[] = [...Array(parseFloat(probeOutput.toString())).keys()];
         prompt = await inquirer.prompt({
