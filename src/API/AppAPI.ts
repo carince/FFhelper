@@ -1,20 +1,16 @@
 import { ipcMain, dialog } from 'electron'
-import fs from 'fs'
-import path from 'path'
 
 ipcMain.handle('fileDialog', async() => {
-    const filePath = dialog.showOpenDialogSync({ properties: ['openFile'] })
+    const filePath = dialog.showOpenDialogSync({ 
+        properties: ['openFile'], 
+        filters: [{name: 'Video', extensions: ['mp4', 'mkv', 'mov', 'wmv']}]
+    })
+
     if (filePath === undefined) {
         return(`No file was selected!`)
     }
 
-    console.log(`type: ${typeof filePath!.toString()} | string: ${filePath!.toString()}`)
-
-    if (!fs.existsSync(path.join(filePath!.toString()))) {
-        return(filePath!.toString())
-    } else {
-        return(`File selected does not exist!`)
-    }
+    return(filePath)
 })
 
 console.log(`[IPC]\tipcMain initialized`)
