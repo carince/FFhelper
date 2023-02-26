@@ -8,11 +8,11 @@ export default function Trim() {
             <Row>
                 <Col>
                     <p className='fs-5'> Start </p>
-                    <input type="text" name="" id="" />
+                    <input type="text" name="" id="trim-start" />
                 </Col>
                 <Col>
                     <p className='fs-5'> End </p>
-                    <input type="text" name="" id="" />
+                    <input type="text" name="" id="trim-end" />
                 </Col>
             </Row>
         </Container>

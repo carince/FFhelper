@@ -11,7 +11,7 @@ export default function App() {
       <Stack gap={4}>
         <Col>
           <h1> FFhelper </h1>
-          <Badge> v0.1.0 Beta</Badge>
+          <Badge> 0.1.0 Beta</Badge>
         </Col>
 
         <SelectFile />
