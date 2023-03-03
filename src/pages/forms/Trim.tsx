@@ -1,10 +1,10 @@
-import { Container, Row, Col, Form } from 'react-bootstrap'
+import { Container, Form, Row, Col } from 'react-bootstrap'
 
 export default function Trim() {
     return (
         <Container className="Trim border rounded shadow-sm p-3">
             <Row className="Trim-Title">
-                <Form className="d-flex justify-content-between align-items-center">
+                <Col className="d-flex justify-content-between align-items-center">
                     <h2> Trim </h2>
                     <Form.Check type="switch"
                         id="custom-switch"
@@ -13,23 +13,24 @@ export default function Trim() {
                             window.settings.update("trimConfirm", elm.target.checked);
                         }}
                     />
-                </Form>
+                </Col>
                 <p className='fs-6'> Trim the video to your specified time. </p>
             </Row>
-            <Row className="Trim-Settings">
-                <Col>
-                    <p className='fs-5'> Start </p>
-                    <input type="text" name="" id="trim-start" onChange={(elm) => {
+            <Form className="Trim-Body">
+                <Form.Group>
+                    <Form.Label> Start Timestamp </Form.Label>
+                    <Form.Control type="input" placeholder="HH:MM:SS" onChange={(elm) => {
                         window.settings.update("trimStart", elm.target.value);
-                    }}/>
-                </Col>
-                <Col>
-                    <p className='fs-5'> End </p>
-                    <input type="text" name="" id="trim-end" onChange={(elm) => {
+                    }} />
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label> End Timestamp </Form.Label>
+                    <Form.Control type="input" placeholder="HH:MM:SS" onChange={(elm) => {
                         window.settings.update("trimEnd", elm.target.value);
-                    }}/>
-                </Col>
-            </Row>
+                    }} />
+                </Form.Group>
+            </Form>
         </Container>
     )
 }
