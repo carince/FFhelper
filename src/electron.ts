@@ -18,10 +18,10 @@ app.on("ready", async (): Promise<void> => {
     window.loadURL("http://localhost:3000");
 
     window.once("ready-to-show", (): void => {
+        require('./IPC/ipcMain')
         window?.show();
         window?.webContents.openDevTools();
         console.log("[App]\tWindow loaded");
-        require('./API/AppAPI')
     });
 
     window.on("closed", (): void => {

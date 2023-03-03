@@ -4,24 +4,21 @@ console.log(`[IPC]\tSettingsIPC initialized`)
 
 interface settingsInt {
     source: string;
-    trim: {
-        confirm: boolean;
-        start: string;
-        end: string;
-    }
+    trimConfirm: boolean;
+    trimStart: string;
+    trimEnd: string;
+
 }
 
 const settings: settingsInt = {
     source: "",
-    trim: {
-        confirm: false,
-        start: "",
-        end: ""
-    }
+    trimConfirm: false,
+    trimStart: "",
+    trimEnd: ""
 }
 
-ipcMain.on('settings/update', async (event, data): Promise<void> => {
-    console.log(`[IPC] Settings: ${data}`);
-    // console.log(`[IPC]\tSetting updated: ${setting}: ${data}`);
-    // (settings as any)[setting] = data
+ipcMain.on('settings:update', async (event, data) => {
+    const setting = Object.keys(data)[0];
+    (settings as any)[setting] = data[setting]
+    console.log(`[IPC]\tSetting "${setting}" has been updated to: "${data[setting]}"`)
 })

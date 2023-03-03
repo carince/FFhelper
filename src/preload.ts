@@ -4,11 +4,8 @@ console.log(`[App]\tPreload Initialized`)
 
 contextBridge.exposeInMainWorld("api", {
     fileDialog: async () => {
-        const filePath = await ipcRenderer.invoke('fileDialog');
-        const element = document.querySelector(`p.filePath`);
-        element!.innerHTML = filePath!.toString();
-
-        window.settings.update("directory", filePath!.toString());
+        let filePath = await ipcRenderer.invoke('fileDialog');
+        return (filePath)
     },
 
     run: async () => {
