@@ -15,11 +15,11 @@ export default function SelectFile(this: any) {
 
     return (
         <Container className="SelectFile border rounded shadow-sm p-3">
-            <Row className="SelectFile-Title">
+            <Row className="Title">
                 <h2> Source </h2>
                 <p className="fs-6"> Select video file for editing.</p>
             </Row>
-            <Row className="SelectFile-Body">
+            <Row className="Body">
                 <Col className="d-flex align-items-center">
                     <Button onClick={fileDialog} className='me-3'> Select </Button>
                     <p className='filePath col-md-auto m-0'> No file selected yet. </p>
