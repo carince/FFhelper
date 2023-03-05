@@ -5,7 +5,7 @@ declare global {
             run: () => void;
         },
         settings: {
-            update: (setting: string, data: any) => void;
+            update: (category: string, setting: string, data: any) => void;
         }
     }
 }

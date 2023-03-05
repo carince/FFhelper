@@ -3,22 +3,34 @@ import { ipcMain } from "electron"
 console.log(`[IPC]\tSettingsIPC initialized`)
 
 interface settingsInt {
-    source: string;
-    trimConfirm: boolean;
-    trimStart: string;
-    trimEnd: string;
-
+    video: {
+        sourcePath: string;
+        exportName: string;
+    }
+    trim: {
+        confirm: boolean;
+        start: string;
+        end: string;
+    }
 }
 
 const settings: settingsInt = {
-    source: "",
-    trimConfirm: false,
-    trimStart: "",
-    trimEnd: ""
+    video: {
+        sourcePath: "",
+        exportName: "",
+    },
+    trim: {
+        confirm: false,
+        start: "",
+        end: ""
+    }
 }
 
-ipcMain.on('settings:update', async (event, data) => {
-    const setting = Object.keys(data)[0];
-    (settings as any)[setting] = data[setting]
-    console.log(`[IPC]\tSetting "${setting}" has been updated to: "${data[setting]}"`)
+
+ipcMain.on('settings:update', async (event, payload) => {
+    const category = Object.keys(payload)[0];
+    const setting = Object.keys(payload[category])[0];
+    const data: any = payload[category][setting];
+    (settings as { [key: string]: any })[category][setting] = data
+    console.log(`[IPC]\tSettings has been updated: ${category}.${setting} = ${data}`)
 })

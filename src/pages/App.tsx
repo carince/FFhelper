@@ -1,4 +1,4 @@
-import SelectFile from './forms/SelectFile'
+import Source from './forms/Source'
 import Trim from './forms/Trim';
 import Export from './forms/Export'
 
@@ -13,7 +13,7 @@ export default function App() {
           <Badge className="align-self-end ms-2 mb-1">0.1.0 Beta</Badge>
         </Col>
 
-        <SelectFile />
+        <Source />
         <Trim />
         <Export />
       </Stack>

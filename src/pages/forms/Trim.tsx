@@ -12,7 +12,7 @@ export default function Trim() {
                     <Form.Check type="switch"
                         className="float-right"
                         onChange={(elm) => {
-                            window.settings.update("trimConfirm", elm.target.checked)
+                            window.settings.update("trim", "confirm", elm.target.checked)
                             if (elm.target.checked === true) {
                                 disableForm(false)
                             } else {
@@ -31,7 +31,7 @@ export default function Trim() {
                             <Form.Group>
                                 <Form.Label> Start Timestamp </Form.Label>
                                 <Form.Control type="input" placeholder="HH:MM:SS" onChange={(elm) => {
-                                    window.settings.update("trimStart", elm.target.value);
+                                    window.settings.update("trim", "start", elm.target.value);
                                 }} />
                             </Form.Group>
                         </Col>
@@ -39,7 +39,7 @@ export default function Trim() {
                             <Form.Group>
                                 <Form.Label> End Timestamp </Form.Label>
                                 <Form.Control type="input" placeholder="HH:MM:SS" onChange={(elm) => {
-                                    window.settings.update("trimEnd", elm.target.value);
+                                    window.settings.update("trim", "end", elm.target.value);
                                 }} />
                             </Form.Group>
                         </Col>
